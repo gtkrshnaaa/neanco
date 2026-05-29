@@ -23,19 +23,20 @@ For potential clients, this system shifts the conversation from abstract theoret
 
 The entity chosen for this architectural demonstration is **Nusantara Extract & Co.**, a fictional multi-billion-dollar holding company operating within the high-value agricultural extraction, wellness, and agro-industrial processing sectors. The focus on biological assets and natural extraction offers a deeply complex structural workflow, far superseding standard e-commerce or point-of-sale portfolios.
 
-```
-                          [ Nusantara Extract & Co. ]
-                               (Parent Holding)
-                                      |
-         +----------------------------+----------------------------+
-         |                            |                            |
-         v                            v                            v
-[ Nusantara Extract Factory ]  [ Nusantara Logistics & Fleet ]  [ Nusantara Bio-Commerce ]
-    (Child: Manufacturing)          (Child: Distribution)          (Child: Multi-Brand)
-                                                                   |  (Sub-brands)
-                                                                   +--> Brand Coffee
-                                                                   +--> Brand Wellness
+```mermaid
+graph TD
+    Parent["Nusantara Extract & Co.<br>(Parent Holding)"]
+    Factory["Nusantara Extract Factory<br>(Child: Manufacturing)"]
+    Logistics["Nusantara Logistics & Fleet<br>(Child: Distribution)"]
+    Commerce["Nusantara Bio-Commerce<br>(Child: Multi-Brand)"]
+    Coffee["Brand Coffee"]
+    Wellness["Brand Wellness"]
 
+    Parent --> Factory
+    Parent --> Logistics
+    Parent --> Commerce
+    Commerce --> Coffee
+    Commerce --> Wellness
 ```
 
 ### 2.2 Corporate Subsidiaries
@@ -58,30 +59,21 @@ To demonstrate cross-system synergy, the holding company is divided into three d
 
 The core strength of the Nusantara Extract & Co. ecosystem lies in its **structural synergy**. Rather than treating each application as an isolated unit, the network mimics a real-world conglomerate where the output of one company serves as the operational input for the next.
 
-```
-+---------------------------------------------------------------------------------------+
-|                                  NUSANTARA EXTRACT & CO.                              |
-|                                (Centralized Identity System)                          |
-+---------------------------------------------------------------------------------------+
-                                           |
-  [Upstream]                               | (API Telemetry)
-  Nusantara Extract Factory                v
-  - Raw Material Ingestion    =============================> Outputs: Bulk Extracts
-  - Yield & Shrinkage Math                                        |
-                                                                  | (Dispatches Inventory)
-  [Midstream]                                                     v
-  Nusantara Logistics & Fleet <===================================+
-  - Multi-Warehouse Hubs
-  - FEFO Inventory Control    =============================> Outputs: Dispatched Stock
-  - B2B Order Fullfillment                                        |
-                                                                  | (Fulfills Orders)
-  [Downstream]                                                    v
-  Nusantara Bio-Commerce      <===================================+
-  - Brand Coffee Portal
-  - Brand Wellness Portal     =============================> Outputs: Retail Sales
-                                                             - Xendit Payments
-                                                             - WhatsApp Notifications
+```mermaid
+graph TD
+    Parent["Nusantara Extract & Co.<br>(Centralized Identity System)"]
+    Factory["[Upstream]<br>Nusantara Extract Factory<br>• Raw Material Ingestion<br>• Yield & Shrinkage Math"]
+    Logistics["[Midstream]<br>Nusantara Logistics & Fleet<br>• Multi-Warehouse Hubs<br>• FEFO Inventory Control<br>• B2B Order Fulfillment"]
+    Commerce["[Downstream]<br>Nusantara Bio-Commerce<br>• Brand Coffee Portal<br>• Brand Wellness Portal"]
+    RetailSales["Outputs: Retail Sales<br>• Xendit Payments<br>• WhatsApp Notifications"]
 
+    Parent -- "API Telemetry" --> Factory
+    Parent -- "API Telemetry" --> Logistics
+    Parent -- "API Telemetry" --> Commerce
+
+    Factory -- "Outputs: Bulk Extracts<br>(Dispatches Inventory)" --> Logistics
+    Logistics -- "Outputs: Dispatched Stock<br>(Fulfills Orders)" --> Commerce
+    Commerce --> RetailSales
 ```
 
 ### 3.1 Upstream: Manufacturing & Extraction Value Chain

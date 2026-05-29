@@ -178,18 +178,21 @@ The interactions across the Nusantara Extract & Co. network are managed through 
 
 ### 5.1 Multi-Level API Communication Topography
 
-```
-[Level 1: Authentication Gateway]
-Child Applications ---------(Validate Bearer Token)---------> Parent SSO (Port 49111)
-Child Applications <--------(Return JSON: User Profile)------ Parent SSO (Port 49111)
+```mermaid
+sequenceDiagram
+    %% Level 1: Authentication Gateway
+    Note over Child Applications, Parent SSO (Port 49111): Level 1: Authentication Gateway
+    Child Applications->>Parent SSO (Port 49111): Validate Bearer Token
+    Parent SSO (Port 49111)-->>Child Applications: Return JSON: User Profile
 
-[Level 2: Supply Chain Material Synchronization]
-Child Factory (Port 49222) --(POST: Industrial Yield Batch)--> Child Logistics (Port 49333)
+    %% Level 2: Supply Chain Material Synchronization
+    Note over Child Factory (Port 49222), Child Logistics (Port 49333): Level 2: Supply Chain Material Synchronization
+    Child Factory (Port 49222)->>Child Logistics (Port 49333): POST: Industrial Yield Batch
 
-[Level 3: Retail Transactions & Inventory Depletion]
-Brand E-Commerce (Ports 49444/49555) --(POST: Reserve Stock)--> Child Logistics (Port 49333)
-Brand E-Commerce (Ports 49444/49555) <--(JSON: Waybill Issued)--- Child Logistics (Port 49333)
-
+    %% Level 3: Retail Transactions & Inventory Depletion
+    Note over Brand E-Commerce (Ports 49444/49555), Child Logistics (Port 49333): Level 3: Retail Transactions & Inventory Depletion
+    Brand E-Commerce (Ports 49444/49555)->>Child Logistics (Port 49333): POST: Reserve Stock
+    Child Logistics (Port 49333)-->>Brand E-Commerce (Ports 49444/49555): JSON: Waybill Issued
 ```
 
 ### 5.2 Deep Dive: Functional Technical Flows
@@ -300,23 +303,16 @@ To demonstrate pure software engineering mastery, the installation of third-part
 
 To ensure smooth concurrent execution on standard developer hardware without resource strain, the entire network is containerized using decoupled, lightweight Docker configurations. Each application runs within an isolated environment containing a dedicated PHP-FPM runtime and an Nginx instance.
 
-```
-+---------------------------------------------------------------------------------------+
-|                                DOCKER HOST WORKSPACE                                  |
-+---------------------------------------------------------------------------------------+
-    |
-    ├── [Port 49111] -----> Container: parent-sso (PHP 8.x + Nginx)
-    │
-    ├── [Port 49222] -----> Container: child-factory (PHP 8.x + Nginx)
-    │
-    ├── [Port 49333] -----> Container: child-logistics (PHP 8.x + Nginx)
-    │
-    ├── [Port 49444] -----> Container: brand-coffee (PHP 8.x + Nginx)
-    │
-    ├── [Port 49555] -----> Container: brand-wellness (PHP 8.x + Nginx)
-    │
-    └── [Port 49666] -----> Container: shared-telemetry-worker (PHP CLI Worker Only)
-
+```mermaid
+graph TD
+    subgraph Host["DOCKER HOST WORKSPACE"]
+        Parent["Container: parent-sso (PHP 8.x + Nginx)<br>Port: 49111"]
+        Factory["Container: child-factory (PHP 8.x + Nginx)<br>Port: 49222"]
+        Logistics["Container: child-logistics (PHP 8.x + Nginx)<br>Port: 49333"]
+        Coffee["Container: brand-coffee (PHP 8.x + Nginx)<br>Port: 49444"]
+        Wellness["Container: brand-wellness (PHP 8.x + Nginx)<br>Port: 49555"]
+        Worker["Container: shared-telemetry-worker (PHP CLI Worker Only)<br>Port: 49666"]
+    end
 ```
 
 The system maps structural ports to prevent network overlaps, configured via the following centralized specification matrix:

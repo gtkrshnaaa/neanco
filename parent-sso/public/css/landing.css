@@ -415,7 +415,7 @@ nav ul li a:hover {
 
 /* Footer Section */
 footer {
-    background-color: var(--color-primary);
+    background-color: var(--color-dark); /* Premium roasted dark matcha vein background */
     color: white;
     padding: 5rem 0 2rem 0;
     font-size: 0.9rem;

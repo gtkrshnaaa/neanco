@@ -187,11 +187,11 @@ nav ul li a:hover {
     padding: 6rem 0 11rem 0;
 }
 
-/* Fixed side-by-side grid structure with responsive gap scaling */
+/* Perfect side-by-side layout on desktop */
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Strictly preserved side-by-side columns */
-    gap: clamp(1rem, 4vw, 4rem); /* Responsive fluid scaling gap */
+    grid-template-columns: 1.15fr 0.85fr; /* Restored perfect desktop grid proportion */
+    gap: 4rem;
     align-items: center;
     width: 100%;
 }
@@ -471,7 +471,16 @@ footer {
         min-height: auto;
     }
     
-    /* Removed the collapsing of hero-grid and container overlays to preserve side-by-side alignment */
+    /* Keep side-by-side layout intact but expand columns to give text ample room */
+    .hero-grid {
+        grid-template-columns: 1.5fr 0.5fr; /* 75% width for text, 25% window for background island */
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+    }
     
     .features {
         margin-top: 2rem;
@@ -498,6 +507,12 @@ footer {
         display: none;
     }
     
+    /* Maximize text room on small devices while maintaining background visibility */
+    .hero-grid {
+        grid-template-columns: 1.7fr 0.3fr; /* 85% text space, 15% window */
+        gap: 1rem;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
     }

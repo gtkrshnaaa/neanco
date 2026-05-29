@@ -55,7 +55,7 @@
 
     <!-- Hero Section with Absolute Blended Background and Fog Overlays -->
     <section class="hero" id="hero">
-        <div class="container">
+        <div class="container" style="position: relative;">
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="floating-badge floating-badge-green float-delay-1" style="margin-bottom: 1.5rem;">
@@ -74,32 +74,21 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Absolutely Positioned Floating Bio-Lab Widget -->
-        <div class="floating-island-card float-delay-2" style="position: absolute; right: 8%; top: 22%; z-index: 5;">
-            <div class="floating-card-icon">🔬</div>
-            <div class="floating-card-body">
-                <div class="floating-card-title">Extract Bio-Lab</div>
-                <div class="floating-card-status">98.4% Pure Concentrate</div>
-            </div>
-        </div>
-
-        <!-- Second Floating Tagline Badge -->
-        <div class="floating-island-card float-delay-1" style="position: absolute; right: 28%; top: 58%; z-index: 5;">
-            <div class="floating-card-icon">🌱</div>
-            <div class="floating-card-body">
-                <div class="floating-card-title">Organic Traceability</div>
-                <div class="floating-card-status">100% Certified Source</div>
-            </div>
-        </div>
-
-        <!-- Third Floating Node Badge -->
-        <div class="floating-island-card float-delay-3" style="position: absolute; right: 8%; top: 76%; z-index: 5;">
-            <div class="floating-card-icon">📡</div>
-            <div class="floating-card-body">
-                <div class="floating-card-title">SSO Authority Node</div>
-                <div class="floating-card-status">Status: 100% Secured</div>
+            
+            <!-- Constrained Floating Telemetry Pill Stack -->
+            <div class="telemetry-pill-stack">
+                <div class="telemetry-pill">
+                    <span class="telemetry-dot green"></span>
+                    🔬 Bio-Lab: 98.4% Pure
+                </div>
+                <div class="telemetry-pill">
+                    <span class="telemetry-dot green"></span>
+                    🌱 Source: 100% Organic
+                </div>
+                <div class="telemetry-pill">
+                    <span class="telemetry-dot blue"></span>
+                    📡 Node: SSO Secure
+                </div>
             </div>
         </div>
 

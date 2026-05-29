@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
 <body>
-    <div class="bg-decor"></div>
-
     <!-- Header Navigation -->
     <header>
         <div class="container nav-wrapper">
@@ -19,10 +17,10 @@
             <nav>
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#ecosystem">Ecosystem</a></li>
-                    <li><a href="#assets">Bio-Assets</a></li>
-                    <li><a href="#sustainability">Sustainability</a></li>
-                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#ecosystem">About Us</a></li>
+                    <li><a href="#ecosystem">Features</a></li>
+                    <li><a href="#ecosystem">Our Work</a></li>
+                    <li><a href="#ecosystem">Contact</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
@@ -43,57 +41,39 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Absolute Blended Background and Fog Overlays -->
     <section class="hero" id="hero">
         <div class="container hero-grid">
             <div class="hero-content">
                 <h1 class="hero-tagline">
-                    Pure Extracts,
+                    Pure Extracts,<br>
                     <span>Global Impact.</span>
                 </h1>
                 <p class="hero-description">
-                    Synthesizing Indonesia's rich agricultural biodiversity into world-class botanical concentrates. We build premium eco-friendly industrial assets with pure subcritical extraction methodologies and secure cryptographic trace controls.
+                    Synthesizing Indonesia's rich agricultural biodiversity into premium botanical concentrates with zero environmental trace.
                 </p>
                 <div class="hero-ctas">
-                    <a href="#ecosystem" class="btn btn-primary">Our Ecosystem</a>
-                    <a href="#" class="btn btn-secondary">SSO Gateway</a>
+                    <a href="#ecosystem" class="btn btn-ecosystem">Our Ecosystem</a>
                 </div>
             </div>
-            <div class="hero-image-wrapper">
-                <div class="hero-image-container">
-                    <img src="{{ asset('images/nusantara_hero_island.png') }}" alt="Nusantara Extract & Co. Floating Extraction Island" class="hero-image">
-                </div>
-                <!-- Glass Widgets -->
-                <div class="glass-widget widget-1">
-                    <div class="widget-icon">🌱</div>
-                    <div class="widget-text">
-                        <span class="widget-title">Bio-Extraction</span>
-                        <span class="widget-desc">100% molecular traceability</span>
-                    </div>
-                </div>
-                <div class="glass-widget widget-2">
-                    <div class="widget-icon">🛡️</div>
-                    <div class="widget-text">
-                        <span class="widget-title">Enterprise Security</span>
-                        <span class="widget-desc">SSO Single Sign-On Gateway</span>
-                    </div>
-                </div>
-            </div>
+        </div>
+        
+        <!-- Full-bleed background image & fog/mist overlays -->
+        <div class="hero-background-image-container">
+            <div class="hero-mist-overlay-left"></div>
+            <div class="hero-mist-overlay-bottom"></div>
+            <img src="{{ asset('images/nusantara_hero_island.png') }}" alt="Nusantara Extraction Island" class="hero-bg-image">
         </div>
     </section>
 
     <!-- Refinement Ecosystem Features Section -->
     <section class="features" id="ecosystem">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Decoupled Monolith Architecture</h2>
-                <p class="section-desc">Pioneering standard-compliant logistics and botanical refinement networks</p>
-            </div>
             <div class="features-grid">
                 <!-- Card 1 -->
                 <div class="feature-card">
                     <div class="feature-image-wrapper">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path>
                         </svg>
                     </div>
@@ -103,7 +83,7 @@
                 <!-- Card 2 -->
                 <div class="feature-card">
                     <div class="feature-image-wrapper">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                         </svg>
                     </div>
@@ -113,7 +93,7 @@
                 <!-- Card 3 -->
                 <div class="feature-card">
                     <div class="feature-image-wrapper">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                         </svg>
                     </div>

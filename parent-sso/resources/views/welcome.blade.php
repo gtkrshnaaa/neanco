@@ -17,10 +17,10 @@
             <nav>
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#ecosystem">About Us</a></li>
-                    <li><a href="#ecosystem">Features</a></li>
-                    <li><a href="#ecosystem">Our Work</a></li>
-                    <li><a href="#ecosystem">Contact</a></li>
+                    <li><a href="#our-brands">Our Brands</a></li>
+                    <li><a href="#the-journey">The Journey</a></li>
+                    <li><a href="#our-impact">Our Impact</a></li>
+                    <li><a href="#get-started">Contact</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
@@ -79,14 +79,14 @@
             <img src="{{ asset('images/nusantara_hero_island.png') }}" alt="Nusantara Extraction Island" class="hero-bg-image">
             <!-- Floating leaf wind particles -->
             <div class="hero-leaves">
-                <span class="hero-leaf">🍃</span>
-                <span class="hero-leaf">🌿</span>
-                <span class="hero-leaf">🍃</span>
-                <span class="hero-leaf">🌱</span>
-                <span class="hero-leaf">🍃</span>
-                <span class="hero-leaf">🌿</span>
-                <span class="hero-leaf">🍃</span>
-                <span class="hero-leaf">🌿</span>
+                <span class="hero-leaf"></span>
+                <span class="hero-leaf"></span>
+                <span class="hero-leaf"></span>
+                <span class="hero-leaf"></span>
+                <span class="hero-leaf"></span>
+                <span class="hero-leaf"></span>
+                <span class="hero-leaf"></span>
+                <span class="hero-leaf"></span>
             </div>
         </div>
     </section>
@@ -204,14 +204,20 @@
                 <h2 class="corp-bento-title">From Indonesian Farms to Your Hands</h2>
             </div>
             
-            <div class="corp-wide-card reveal">
-                <div class="corp-wide-info">
+            <div class="section-split reveal">
+                <div class="section-img-wrapper">
+                    <img src="{{ asset('images/distillation_products.png') }}" alt="Premium botanical products">
+                    <div class="dot-grid-overlay"></div>
+                </div>
+                <div>
                     <h3 class="corp-wide-title">Rooted in Nature, Refined with Care</h3>
                     <p class="corp-wide-desc">
                         It begins with Indonesian soil. Our farmers cultivate vetiver, patchouli, and premium coffee cherries using time-honored techniques passed down through generations. We then carefully extract and refine these raw materials in our own facilities, preserving their purity and potency. The result? Products you can trust, with a story you can feel in every sip and every drop.
                     </p>
                 </div>
-                <div class="corp-wide-pillars">
+            </div>
+            <div class="corp-wide-card reveal" style="margin-top: 2.5rem;">
+                <div class="corp-wide-pillars" style="width: 100%; min-width: auto;">
                     <div class="corp-pillar-item">
                         <span class="corp-pillar-title">Ethically Sourced</span>
                         <span class="corp-pillar-desc">Direct partnerships with Indonesian farmers ensuring fair pricing and sustainable practices.</span>
@@ -237,6 +243,10 @@
     <!-- Journey Timeline: How We Bring It To You -->
     <section class="journey-section" id="the-journey">
         <div class="container">
+            <div class="section-img-wrapper section-img-landscape reveal">
+                <img src="{{ asset('images/botanical_farm.png') }}" alt="Indonesian volcanic farming terraces">
+                <div class="dot-grid-overlay"></div>
+            </div>
             <div class="corp-bento-title-group reveal" style="text-align: center;">
                 <span class="corp-bento-tag">The Journey</span>
                 <h2 class="corp-bento-title">From Soil to Your Doorstep</h2>

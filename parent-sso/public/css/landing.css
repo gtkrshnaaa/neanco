@@ -177,14 +177,13 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* Hero Section */
+/* Hero Section - Block formatting to enforce 90% container boundaries and vertical balancing */
 .hero {
     min-height: 85vh;
-    display: flex;
-    align-items: center;
+    display: block; /* Robust standard block element */
     position: relative;
     background-color: #ffffff;
-    padding: 6rem 0 11rem 0;
+    padding: 8.5rem 0 11rem 0; /* Elevated padding to perfectly center grid visually */
 }
 
 /* Perfect side-by-side layout on desktop */

@@ -64,13 +64,51 @@ body {
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: var(--color-primary) #f3f9f4;
-    /* Matcha grain particle texture — subtle powder-on-white effect */
+    /* Matcha grain particle texture */
     background-image:
         radial-gradient(circle, rgba(45, 90, 39, 0.03) 1px, transparent 1px),
         radial-gradient(circle, rgba(110, 191, 103, 0.02) 1px, transparent 1px),
         radial-gradient(circle, rgba(45, 90, 39, 0.015) 0.5px, transparent 0.5px);
     background-size: 24px 24px, 38px 38px, 15px 15px;
     background-position: 0 0, 12px 12px, 6px 6px;
+}
+
+/* Botanical leaf pattern overlay applied to all major sections */
+.corp-bento-section,
+.journey-section,
+.testimonials-section,
+.cta-section,
+.features {
+    position: relative;
+}
+
+.corp-bento-section::before,
+.journey-section::before,
+.testimonials-section::before,
+.cta-section::before,
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/leaf_pattern.png');
+    background-size: 420px;
+    background-repeat: repeat;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure content sits above the pattern overlay */
+.corp-bento-section > .container,
+.journey-section > .container,
+.testimonials-section > .container,
+.cta-section > .container,
+.features > .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* Container set exactly to 90% width (5% left and right margins) */
@@ -1011,6 +1049,29 @@ footer {
     padding: 6rem 0;
     background-color: var(--color-primary);
     color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.impact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/leaf_pattern.png');
+    background-size: 420px;
+    background-repeat: repeat;
+    opacity: 0.06;
+    filter: invert(1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.impact-section > .container {
+    position: relative;
+    z-index: 1;
 }
 
 .impact-grid {

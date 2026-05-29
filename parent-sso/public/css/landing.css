@@ -225,12 +225,16 @@ nav ul li a:hover {
     gap: 1.25rem;
 }
 
-/* Full-bleed absolute background layout matching mockup */
+/* 
+   Expanded image container to 75% width.
+   This allows the beautiful sky background to bleed all the way 
+   behind the tagline and text while the island stays right-aligned.
+*/
 .hero-background-image-container {
     position: absolute;
     top: 0;
     right: 0;
-    width: 52%;
+    width: 75%; /* Expanded to bleed behind text */
     height: 100%;
     z-index: 1;
     overflow: hidden;
@@ -247,18 +251,22 @@ nav ul li a:hover {
     transform-origin: center right;
 }
 
-/* Soft Fog / Mist Overlays: Thinned out and made highly translucent */
+/* 
+   Soft Fog / Mist Overlays: 
+   Thinned out significantly with a wide transition from 20% solid white 
+   to completely transparent, letting the light blue sky act as text background.
+*/
 .hero-mist-overlay-left {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 60%; /* Gentle wide transition */
     height: 100%;
     background: linear-gradient(90deg, 
         #ffffff 0%, 
-        rgba(255, 255, 255, 0.9) 10%, 
-        rgba(255, 255, 255, 0.4) 40%, 
-        rgba(255, 255, 255, 0) 100%
+        #ffffff 20%, /* Solid white at far left margin */
+        rgba(255, 255, 255, 0.7) 45%, 
+        rgba(255, 255, 255, 0) 100% /* Blends completely into sky */
     );
     z-index: 2;
 }

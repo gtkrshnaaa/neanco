@@ -28,14 +28,14 @@
                     @auth
                         <a href="{{ url('/dashboard') }}" class="btn btn-secondary">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-secondary">
-                            <span class="btn-text-full">Client Login</span>
-                            <span class="btn-text-mobile">Login</span>
+                        <a href="#get-started" class="btn btn-secondary">
+                            <span class="btn-text-full">Contact Us</span>
+                            <span class="btn-text-mobile">Contact</span>
                         </a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-primary">
-                                <span class="btn-text-full">Enterprise SSO</span>
-                                <span class="btn-text-mobile">SSO</span>
+                            <a href="#get-started" class="btn btn-primary">
+                                <span class="btn-text-full">Get Started</span>
+                                <span class="btn-text-mobile">Start</span>
                             </a>
                         @endif
                     @endauth

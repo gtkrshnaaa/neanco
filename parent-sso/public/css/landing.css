@@ -510,7 +510,84 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Corporate Holding Bento Extensions */
+/* ===================================================================
+   SCROLL REVEAL ANIMATION ENGINE
+   =================================================================== */
+@keyframes revealUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes revealScale {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes revealLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes revealRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes countPulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.05); }
+}
+
+@keyframes floatSoft {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+@keyframes lineGrow {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+
+/* Base hidden state for scroll-reveal elements */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delay classes for child elements */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Scale reveal variant */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.revealed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===================================================================
+   CORPORATE HOLDING BENTO EXTENSIONS (Enhanced)
+   =================================================================== */
 .corp-bento-section {
     padding: 6.5rem 0;
     background-color: #ffffff;
@@ -549,7 +626,7 @@ footer {
 }
 
 .corp-division-card {
-    background: rgba(242, 250, 244, 0.6); /* Premium matching flat organic cream-matcha glassmorphism */
+    background: rgba(242, 250, 244, 0.6);
     border: 1px solid rgba(45, 90, 39, 0.08);
     border-radius: 1.75rem;
     padding: 3rem 2.2rem;
@@ -711,16 +788,311 @@ footer {
     line-height: 1.4;
 }
 
-/* Responsive adjustments */
+/* ===================================================================
+   JOURNEY TIMELINE SECTION
+   =================================================================== */
+.journey-section {
+    padding: 6.5rem 0;
+    background-color: var(--color-secondary);
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+}
+
+.journey-step {
+    text-align: center;
+    padding: 3rem 2.5rem;
+    position: relative;
+}
+
+.journey-step-num {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.journey-step-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.journey-step-desc {
+    font-size: 0.92rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+}
+
+/* Connecting horizontal line between steps */
+.journey-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 4.7rem;
+    right: -1.25rem;
+    width: 2.5rem;
+    height: 2px;
+    background-color: var(--color-primary);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* ===================================================================
+   IMPACT COUNTER SECTION
+   =================================================================== */
+.impact-section {
+    padding: 6rem 0;
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    text-align: center;
+}
+
+.impact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.impact-num {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: var(--color-secondary);
+}
+
+.impact-unit {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.impact-desc {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+    max-width: 220px;
+}
+
+/* ===================================================================
+   TESTIMONIALS SECTION
+   =================================================================== */
+.testimonials-section {
+    padding: 6.5rem 0;
+    background-color: #ffffff;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.testimonial-card {
+    background: rgba(242, 250, 244, 0.5);
+    border: 1px solid rgba(45, 90, 39, 0.08);
+    border-radius: 1.75rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(45, 90, 39, 0.04);
+    border-color: rgba(45, 90, 39, 0.15);
+}
+
+.testimonial-stars {
+    color: #e8a838;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.1em;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+    color: var(--color-gray);
+    line-height: 1.65;
+    font-style: italic;
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.testimonial-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.testimonial-name {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.testimonial-role {
+    font-size: 0.75rem;
+    color: var(--color-gray);
+}
+
+/* ===================================================================
+   CTA BANNER SECTION
+   =================================================================== */
+.cta-section {
+    padding: 6rem 0;
+    background-color: var(--color-secondary);
+}
+
+.cta-card {
+    background: var(--color-primary);
+    border-radius: 2rem;
+    padding: 5rem 4rem;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -25%;
+    width: 50%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.cta-tag {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: 1.25rem;
+    display: inline-block;
+}
+
+.cta-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.03em;
+}
+
+.cta-desc {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.2rem;
+    background-color: #ffffff;
+    color: var(--color-primary);
+    border-radius: 0.85rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.btn-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.2rem;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.85rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.btn-cta-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ===================================================================
+   RESPONSIVE ADJUSTMENTS
+   =================================================================== */
 @media (max-width: 1024px) {
     .hero {
         padding: 5rem 0;
         min-height: auto;
     }
     
-    /* Keep side-by-side layout intact but expand columns to give text ample room */
     .hero-grid {
-        grid-template-columns: 1.5fr 0.5fr; /* 75% width for text, 25% window for background island */
+        grid-template-columns: 1.5fr 0.5fr;
         gap: 2rem;
         text-align: left;
     }
@@ -730,7 +1102,7 @@ footer {
     }
     
     .features {
-        margin-top: -5rem; /* Smoothed out negative margin shift to prevent overlaps */
+        margin-top: -5rem;
         padding: 4rem 0;
     }
     
@@ -744,7 +1116,6 @@ footer {
         gap: 2.5rem;
     }
 
-    /* Corporate Bento Extensions Tablet Shifts */
     .corp-divisions-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -770,20 +1141,42 @@ footer {
         width: 100%;
         min-width: auto;
     }
+
+    .journey-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .journey-step:not(:last-child)::after {
+        display: none;
+    }
+
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cta-card {
+        padding: 3.5rem 2.5rem;
+    }
 }
 
 @media (max-width: 768px) {
     header {
-        padding: 0.85rem 0; /* Slightly tighter header spacing */
+        padding: 0.85rem 0;
     }
     
     nav {
         display: none;
     }
 
-    /* Hide long subtitle brand text and switch button text to compact labels */
     .logo-subtext {
-        display: none; /* Instantly frees up 100px space, reading just 'Nusantara' */
+        display: none;
     }
 
     .logo-text {
@@ -798,30 +1191,29 @@ footer {
     }
 
     .btn-text-full {
-        display: none; /* Hide 'Client Login' and 'Enterprise SSO' */
+        display: none;
     }
 
     .btn-text-mobile {
-        display: inline; /* Show 'Login' and 'SSO' */
+        display: inline;
     }
 
     .auth-buttons {
-        gap: 0.45rem; /* Tighter button gap */
+        gap: 0.45rem;
     }
 
     .btn {
-        padding: 0.5rem 1rem; /* Compact button sizes */
+        padding: 0.5rem 1rem;
         font-size: 0.8rem;
     }
     
-    /* Maximize text room on small devices while maintaining background visibility */
     .hero-grid {
-        grid-template-columns: 1.7fr 0.3fr; /* 85% text space, 15% window */
+        grid-template-columns: 1.7fr 0.3fr;
         gap: 1rem;
     }
 
     .features {
-        margin-top: -3.5rem; /* Perfect spacing on small mobile viewports */
+        margin-top: -3.5rem;
         padding: 3rem 0;
     }
 
@@ -833,5 +1225,31 @@ footer {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+    }
+
+    .corp-bento-section,
+    .journey-section,
+    .impact-section,
+    .testimonials-section,
+    .cta-section {
+        padding: 4rem 0;
+    }
+
+    .corp-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .cta-card {
+        padding: 3rem 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }

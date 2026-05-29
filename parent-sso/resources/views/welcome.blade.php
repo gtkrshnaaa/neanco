@@ -55,13 +55,9 @@
 
     <!-- Hero Section with Absolute Blended Background and Fog Overlays -->
     <section class="hero" id="hero">
-        <div class="container" style="position: relative;">
+        <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="floating-badge floating-badge-green float-delay-1" style="margin-bottom: 1.5rem;">
-                        <span class="pulse-dot"></span>
-                        Ecosystem SSO Portal Active
-                    </div>
                     <h1 class="hero-tagline">
                         Pure Extracts,<br>
                         <span>Global Impact.</span>
@@ -72,52 +68,6 @@
                     <div class="hero-ctas">
                         <a href="#ecosystem" class="btn btn-ecosystem">Our Ecosystem</a>
                     </div>
-                </div>
-            </div>
-            <!-- Holographic Bio-Refinery Monitor Widget -->
-            <div class="refinery-monitor">
-                <div class="monitor-header">
-                    <div class="monitor-tag">🌱 Bio-Refinery Sync</div>
-                    <div class="monitor-pulse">
-                        <span class="pulse-ring"></span>
-                        <span class="pulse-core"></span>
-                    </div>
-                </div>
-                
-                <div class="monitor-signal-box">
-                    <div class="monitor-signal-bars">
-                        <span class="bar bar-1"></span>
-                        <span class="bar bar-2"></span>
-                        <span class="bar bar-3"></span>
-                        <span class="bar bar-4"></span>
-                        <span class="bar bar-5"></span>
-                        <span class="bar bar-6"></span>
-                        <span class="bar bar-7"></span>
-                    </div>
-                    <div class="monitor-signal-label">Secure SSO Handshake Signal</div>
-                </div>
-
-                <div class="monitor-metrics">
-                    <div class="metric-row">
-                        <span class="metric-name">🧪 Bio-Lab Purity</span>
-                        <span class="metric-value">98.4%</span>
-                    </div>
-                    <div class="metric-bar-container">
-                        <div class="metric-bar-fill green" style="width: 98.4%;"></div>
-                    </div>
-
-                    <div class="metric-row" style="margin-top: 1rem;">
-                        <span class="metric-name">🛡️ Auth Security</span>
-                        <span class="metric-value">AES-256</span>
-                    </div>
-                    <div class="metric-bar-container">
-                        <div class="metric-bar-fill blue" style="width: 100%;"></div>
-                    </div>
-                </div>
-                
-                <div class="monitor-footer">
-                    <span>Authority: SSO-SECURE</span>
-                    <span>100% Online</span>
                 </div>
             </div>
         </div>

@@ -91,7 +91,7 @@ header {
     transition: var(--transition-smooth);
 }
 
-.logo-text span {
+.logo-subtext {
     font-weight: 500;
     color: var(--color-accent);
 }
@@ -133,6 +133,15 @@ nav ul li a:hover {
     text-decoration: none;
     transition: var(--transition-smooth);
     cursor: pointer;
+}
+
+/* Responsive Text Toggles */
+.btn-text-mobile {
+    display: none;
+}
+
+.btn-text-full {
+    display: inline;
 }
 
 /* Donate Button Style (Flat Sprout Green) */
@@ -510,9 +519,13 @@ footer {
         display: none;
     }
 
-    /* Prevent logo wrapping on mobile screens and keep buttons neat */
+    /* Hide long subtitle brand text and switch button text to compact labels */
+    .logo-subtext {
+        display: none; /* Instantly frees up 100px space, reading just 'Nusantara' */
+    }
+
     .logo-text {
-        font-size: 1.15rem; /* Scaled down beautifully for mobile line budget */
+        font-size: 1.25rem;
     }
 
     .logo-icon {
@@ -520,6 +533,14 @@ footer {
         height: 1.85rem;
         border-radius: 0.35rem;
         font-size: 0.95rem;
+    }
+
+    .btn-text-full {
+        display: none; /* Hide 'Client Login' and 'Enterprise SSO' */
+    }
+
+    .btn-text-mobile {
+        display: inline; /* Show 'Login' and 'SSO' */
     }
 
     .auth-buttons {

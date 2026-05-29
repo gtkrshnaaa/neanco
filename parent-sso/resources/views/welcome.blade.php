@@ -12,7 +12,7 @@
         <div class="container nav-wrapper">
             <a href="#" class="logo-container">
                 <div class="logo-icon">N</div>
-                <span class="logo-text">Nusantara <span>Extract & Co.</span></span>
+                <span class="logo-text">Nusantara <span class="logo-subtext">Extract & Co.</span></span>
             </a>
             <nav>
                 <ul>
@@ -28,14 +28,26 @@
                     @auth
                         <a href="{{ url('/dashboard') }}" class="btn btn-secondary">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-secondary">Client Login</a>
+                        <a href="{{ route('login') }}" class="btn btn-secondary">
+                            <span class="btn-text-full">Client Login</span>
+                            <span class="btn-text-mobile">Login</span>
+                        </a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-primary">Enterprise SSO</a>
+                            <a href="{{ route('register') }}" class="btn btn-primary">
+                                <span class="btn-text-full">Enterprise SSO</span>
+                                <span class="btn-text-mobile">SSO</span>
+                            </a>
                         @endif
                     @endauth
                 @else
-                    <a href="#" class="btn btn-secondary">Client Login</a>
-                    <a href="#" class="btn btn-primary">Enterprise SSO</a>
+                    <a href="#" class="btn btn-secondary">
+                        <span class="btn-text-full">Client Login</span>
+                        <span class="btn-text-mobile">Login</span>
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                        <span class="btn-text-full">Enterprise SSO</span>
+                        <span class="btn-text-mobile">SSO</span>
+                    </a>
                 @endif
             </div>
         </div>
